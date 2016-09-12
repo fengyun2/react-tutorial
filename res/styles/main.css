@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    line-height: 40px;
+    height: 40px;
+}
+
+a {
+    text-decoration: none;
+    color: #3e3e3e;
+    font-size: 14px;
+    font-weight: bold;
+}
