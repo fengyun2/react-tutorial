@@ -26,6 +26,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(changeText({text: event.target.value}))
     ),
     onCreateTodo: () => {
+      console.log('onCreateTodo')
       dispatch(createTodo())
       dispatch(changeText({text: ''}))
     }

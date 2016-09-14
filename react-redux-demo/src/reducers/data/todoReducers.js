@@ -7,6 +7,7 @@ import { CREATE_TODO, DELETE_TODO, CHANGE_TEXT } from '../../constants/actionTyp
 const todoReducers = handleActions({
   CREATE_TODO: (state) => {
     let todos = state.get('todos').push(state.get('todo'))
+    console.log('todos: ', todos)
     return state.set('todos', todos)
   },
   DELETE_TODO: (state, {payload}) => (
