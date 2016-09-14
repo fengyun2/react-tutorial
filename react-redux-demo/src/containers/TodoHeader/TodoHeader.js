@@ -3,11 +3,25 @@ import TodoHeader from '../../components/TodoHeader'
 
 import { changeText, createTodo } from '../../actions'
 
-export default connect(
-  (state) => ({
-    todo: state.getIn(['todo', 'todo'])
-  }),
-  (dispatch) => ({
+// const mapStateToProps = (state) => ({
+//   // 从 store 取得 todo state
+//   todos: state.getIn(['todo', 'todos'])
+// })
+
+
+// const mapDispatchToProps = (dispatch) => ({
+//   onDeleteTodo: (index) => () => {
+//     dispatch(deleteTodo({index}))
+//   }
+// })
+
+const mapStateToProps = (state) => ({
+  // 从 store 取得 todo state
+  todo: state.getIn(['todo', 'todo'])
+})
+
+
+const mapDispatchToProps = (dispatch) => ({
     onChangeText: (event) => (
     dispatch(changeText({text: event.target.value}))
     ),
@@ -15,5 +29,9 @@ export default connect(
       dispatch(createTodo())
       dispatch(changeText({text: ''}))
     }
-  })
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
 )(TodoHeader)
