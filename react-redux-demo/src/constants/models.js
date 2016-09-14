@@ -1,3 +1,7 @@
+/**
+ * 存放所有初始化数据
+ */
+
 import Immutable from 'immutable';
 
 export const TodoState = Immutable.fromJS({
