@@ -1,6 +1,34 @@
 {
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "ecmaFeatures": {
+        "arrowFunctions": true,
+        "blockBindings": true,
+        "classes": true,
+        "defaultParams": true,
+        "destructuring": true,
+        "forOf": true,
+        "generators": false,
+        "modules": true,
+        "objectLiteralComputedProperties": true,
+        "objectLiteralDuplicateProperties": false,
+        "objectLiteralShorthandMethods": true,
+        "objectLiteralShorthandProperties": true,
+        "spread": true,
+        "superInFunctions": true,
+        "templateStrings": true,
+        "jsx": true
+    },
     "rules": {
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+
+        "no-var": 2, // http://eslint.org/docs/rules/no-var
+        "prefer-const": 2, // http://eslint.org/docs/rules/prefer-const
+
+        "quotes": [
+            2, "single", "avoid-escape" // http://eslint.org/docs/rules/quotes
+        ],
+        "semi": [2, "always"], // http://eslint.org/docs/rules/semi
     },
     "env": {
         "browser": true
