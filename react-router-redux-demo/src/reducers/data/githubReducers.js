@@ -1,7 +1,7 @@
 import { handleActions } from 'redux-actions'
 import { GithubState } from '../../constants/models'
 
-import { GET_GITHUB_INITIATE, GET_GITHUB_SUCCESS, GET_GITHUB_FAIL, CHAGE_USER_ID} from '../constants/actionTypes'
+import { GET_GITHUB_INITIATE, GET_GITHUB_SUCCESS, GET_GITHUB_FAIL, CHAGE_USER_ID} from '../../constants/actionTypes'
 
 const githubReducers = handleActions({
   // 当使用者按送出按钮, 发出 GET_GITHUB_SUCCESS action 时将接收到的资料 merge

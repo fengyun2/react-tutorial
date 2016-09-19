@@ -1,13 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-// import { Router, Route, hashHistory, IndexRoute } from 'react-router'
+import { Provider } from 'react-redux'
+import { Router, Route, browserHistory, IndexRoute } from 'react-router'
+import injectTapEventPlugin from 'react-tap-event-plugin'
 
-import App from './components/App'
+import Main from './components/Main'
+import HomePageContainer from './containers/HomePage'
+import ResultPageContainer from './containers/ResultPage'
+import store from './store'
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('app')
-)
+// import App from './components/App'
+
+// ReactDOM.render(
+//   <App />,
+//   document.getElementById('app')
+// )
 
 // ReactDOM.render(
 //   <Router history={hashHistory}>
@@ -17,3 +24,19 @@ ReactDOM.render(
 //   </Router>,
 //   document.getElementById('app')
 // )
+
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin()
+
+ReactDOM.render(
+  <Provider store={store}>
+      <Router history={browserHistory}>
+        <Route path="/" component={Main}>
+          <IndexRoute component={HomePageContainer} />
+          <Route path="/result" component={ResultPageContainer} />
+        </Route>
+      </Router>
+  </Provider>,
+  document.getElementById('app')
+)
