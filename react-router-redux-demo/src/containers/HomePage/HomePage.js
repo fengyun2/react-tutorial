@@ -11,13 +11,13 @@ export default connect(
     onChangeUserId: (event) => (
     dispatch(changeUserId(event.target.value))
     ),
-    onSubmitUserId: (userId) => () => (
-    dispatch(getGithub(userId))
-    )
+    onSubmitUserId: (userId) => () => {
+      return dispatch(getGithub(userId))
+    }
   }),
   (stateProps, dispatchProps, ownProps) => {
-    const {userId} = stateProps
-    const {onSubmitUserId} = dispatchProps
+    const { userId } = stateProps
+    const { onSubmitUserId } = dispatchProps
     return Object.assign({}, stateProps, dispatchProps, ownProps, {
       onSubmitUserId: onSubmitUserId(userId)
     })

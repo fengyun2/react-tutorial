@@ -12,16 +12,16 @@ import {
  */
 export const getGithub = (userId = 'fengyun2') => {
   return (dispatch) => {
-    dispatch({type: GET_GITHUB_INITIATE})
+    dispatch({ type: GET_GITHUB_INITIATE })
     fetch(`https://api.github.com/users/${userId}`)
     .then((response) => {
       return response.json()
     })
     .then((json) => {
-      dispatch({type: GET_GITHUB_SUCCESS, payload: {data: json}})
+      dispatch({ type: GET_GITHUB_SUCCESS, payload: { data: json } })
     })
     .catch((response) => {
-      dispatch({type: GET_GITHUB_FAIL})
+      dispatch({ type: GET_GITHUB_FAIL } )
     })
   }
 }
@@ -30,5 +30,5 @@ export const getGithub = (userId = 'fengyun2') => {
  * 同步 action
  */
 export const changeUserId = (text) => ({
-  type: CHAGE_USER_ID, payload: {userId: text}
+  type: CHAGE_USER_ID, payload: { userId: text }
 })
