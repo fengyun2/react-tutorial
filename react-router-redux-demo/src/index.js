@@ -7,6 +7,8 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 import Main from './components/Main'
 import HomePageContainer from './containers/HomePage'
 import ResultPageContainer from './containers/ResultPage'
+import TodoFormContainer from './containers/TodoForm'
+import TodoListContainer from './containers/TodoList'
 import store from './store'
 
 // import App from './components/App'
@@ -31,11 +33,13 @@ injectTapEventPlugin()
 
 ReactDOM.render(
   <Provider store={store}>
-      <Router history={browserHistory}>
-        <Route path="/" component={Main}>
-          <IndexRoute component={HomePageContainer} />
-          <Route path="/result" component={ResultPageContainer} />
-        </Route>
+    <Router history={browserHistory}>
+      <Route path="/" component={Main}>
+        <IndexRoute component={HomePageContainer} />
+        <Route path="/result" component={ResultPageContainer} />
+        <Route path="/todo_form" component={TodoFormContainer} />
+        <Route path="/todo_list" component={TodoListContainer} />
+      </Route>
       </Router>
   </Provider>,
   document.getElementById('app')

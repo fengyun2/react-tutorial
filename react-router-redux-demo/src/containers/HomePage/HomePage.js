@@ -15,6 +15,7 @@ export default connect(
       return dispatch(getGithub(userId))
     }
   }),
+
   (stateProps, dispatchProps, ownProps) => {
     const { userId } = stateProps
     const { onSubmitUserId } = dispatchProps
