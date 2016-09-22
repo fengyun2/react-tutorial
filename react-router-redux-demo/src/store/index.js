@@ -1,1 +1,4 @@
-export {default} from './configureStore'
+export {
+    default
+}
+from './configureStore'
